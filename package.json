@@ -1,0 +1,24 @@
+{
+  "name": "fund",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/calculator.js",
+  "scripts": {
+    "build:browser": "webpack && cp dist/fund.js examples/browser",
+    "build:node": "webpack && cp dist/fund.js examples/node/ && node examples/node/example.js",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
