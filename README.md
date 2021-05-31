@@ -1,6 +1,18 @@
 # Fund Contract Calls
-```
 
+- connectMetamask()
+- checkDaiBalance()
+- getAccounts()
+- toWei(n)
+- fromWei(n)
+- loadFund()
+- callFunction(function_name, [params])
+  - only for "stateMutability": "view",
+- createFund(FUND_NAME, FUND_TOKEN_SYMBOL, [TOKENS])
+- deposit(AMOUNT, FUND_ADDRESS, REFERRAL)
+
+- withdraw(AMOUNT, FUND_ADDRESS)
+```
 {
     "inputs": [
         {

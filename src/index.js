@@ -62,25 +62,6 @@ function checkDaiBalance() {
     })
 }
 
-function loadFund() {
-    const web3 = window.web3;
-    return new Promise((resolve, reject) => {
-        web3.eth.getAccounts()
-            .then((account) => {
-                const fundContract = new web3.eth.Contract(FundContract.abi, config.fundContractAddress);
-
-                fundContract.methods
-                    .fundMapping(account[0])
-                    .call()
-                    .then(resp => {
-                        resolve(resp)
-                    })
-                    .catch(err => {
-                        reject(err)
-                    })
-            })
-    })
-}
 
 async function createFund(fundName, tokenSymbol, tokens) {
     const web3 = window.web3;
@@ -233,8 +214,6 @@ function withdraw(amount, fundManagerAddress) {
     })
 }
 
-
-
 function callFunction(name, params=[]) {
     const web3 = window.web3;
 
@@ -259,7 +238,6 @@ module.exports = {
     getAccounts,
     toWei,
     fromWei,
-    loadFund,
     createFund,
     deposit,
     callFunction,
