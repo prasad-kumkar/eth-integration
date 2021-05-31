@@ -1,5 +1,5 @@
 # Fund Contract Calls
-`
+```
 
 {
     "inputs": [
@@ -13,7 +13,20 @@
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
-},<br/>
+},
+{
+    "inputs": [
+        {
+            "internalType": "uint256",
+            "name": "_nav",
+            "type": "uint256"
+        }
+    ],
+    "name": "acceptAllWithdraws",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
 {
     "inputs": [
         {
@@ -31,76 +44,7 @@
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
-},<br>
-{
-    "inputs": [
-        {
-            "internalType": "address",
-            "name": "fundManagerAddress",
-            "type": "address"
-        }
-    ],
-    "name": "getDepositedBalance",
-    "outputs": [
-        {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-        }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-},<br>
-{
-    "inputs": [
-        {
-            "internalType": "address",
-            "name": "fundManagerAddress",
-            "type": "address"
-        }
-    ],
-    "name": "getMyDepositRequest",
-    "outputs": [
-        {
-            "components": [
-                {
-                    "internalType": "address",
-                    "name": "user",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "bool",
-                    "name": "isPending",
-                    "type": "bool"
-                }
-            ],
-            "internalType": "struct FundContract.Request",
-            "name": "",
-            "type": "tuple"
-        }
-    ],
-    "stateMutability": "view",
-    "type": "function"
 },
-{
-    "inputs": [
-        {
-            "internalType": "uint256",
-            "name": "_nav",
-            "type": "uint256"
-        }
-    ],
-    "name": "acceptAllWithdraws",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-},
-
 {
     "inputs": [
         {
@@ -207,7 +151,61 @@
     "stateMutability": "view",
     "type": "function"
 },
-
+{
+    "inputs": [
+        {
+            "internalType": "address",
+            "name": "fundManagerAddress",
+            "type": "address"
+        }
+    ],
+    "name": "getDepositedBalance",
+    "outputs": [
+        {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [
+        {
+            "internalType": "address",
+            "name": "fundManagerAddress",
+            "type": "address"
+        }
+    ],
+    "name": "getMyDepositRequest",
+    "outputs": [
+        {
+            "components": [
+                {
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isPending",
+                    "type": "bool"
+                }
+            ],
+            "internalType": "struct FundContract.Request",
+            "name": "",
+            "type": "tuple"
+        }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+},
 {
     "inputs": [
         {
@@ -455,4 +453,4 @@
     "stateMutability": "nonpayable",
     "type": "function"
 }
-        `
+        ```
