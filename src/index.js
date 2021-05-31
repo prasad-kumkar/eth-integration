@@ -82,7 +82,7 @@ function loadFund() {
     })
 }
 
-async function deployShares(fundName, tokenSymbol, tokens) {
+async function createFund(fundName, tokenSymbol, tokens) {
     const web3 = window.web3;
     return new Promise((resolve, reject) => {
         web3.eth.getAccounts()
@@ -99,7 +99,7 @@ async function deployShares(fundName, tokenSymbol, tokens) {
                         from: accounts[0],
                     })
                     .then((res) => {
-                        createFund(res._address, accounts[0], tokens)
+                        newFund(res._address, accounts[0], tokens)
                             .then((res) => {
                                 resolve(res)
                             })
@@ -114,7 +114,7 @@ async function deployShares(fundName, tokenSymbol, tokens) {
 }
 
 // create a new fund, passing in shares contract address
-function createFund(sharesContractAddress, account, tokens) {
+function newFund(sharesContractAddress, account, tokens) {
     const web3 = window.web3;
 
     const fund = new web3.eth.Contract(config.fundContractAbi, config.fundContractAddress);
@@ -261,7 +261,6 @@ module.exports = {
     fromWei,
     loadFund,
     createFund,
-    deployShares,
     deposit,
     callFunction,
     withdraw
