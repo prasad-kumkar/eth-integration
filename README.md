@@ -12,6 +12,26 @@
 - deposit(AMOUNT, FUND_ADDRESS, REFERRAL)
 
 - withdraw(AMOUNT, FUND_ADDRESS)
+
+## Functions
+READ functions "stateMutability": "view" <br>
+WRITE functions "stateMutability": "nonpayable"<br>
+Read Call Example
+```
+fund.callFunction('getMyDepositRequest', [FUND_MANAGER_ADDRESS])
+.then( res => {
+    console.log(res)
+})
+```
+Write Call Example
+```
+fund.createFund("Prasad's Fund", "PRASAD",  ['0xdc7579bdeeACd54fB9C1e1935E0bfaE6109cEd45'])
+.then((res) => {
+    console.log(res)
+})
+```
+
+### All functions
 ```
 {
     "inputs": [
