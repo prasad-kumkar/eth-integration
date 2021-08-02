@@ -4,8 +4,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'fund.js',
-    library: 'fund',
+    filename: 'EthIntegrate.js',
+    library: 'EthIntegrate',
     libraryTarget: 'umd',
     globalObject: 'this',
   },

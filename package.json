@@ -1,15 +1,15 @@
 {
-  "name": "fund",
+  "name": "@prasad-kumkar/eth-integration",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/calculator.js",
+  "main": "dist/EthIntegrate.js",
   "scripts": {
-    "build:browser": "webpack && cp dist/fund.js examples/browser",
-    "build:node": "webpack && cp dist/fund.js examples/node/ && node examples/node/example.js",
+    "build:browser": "webpack && cp dist/EthIntegrate.js examples/browser",
+    "build:node": "webpack && cp dist/EthIntegrate.js examples/node/ && node examples/node/example.js",
     "build": "webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "Prasad Kumkar <prasadkumkar111@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.14.3",
@@ -29,5 +29,16 @@
   },
   "dependencies": {
     "fs": "0.0.1-security"
-  }
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prasad-kumkar/eth-integration.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prasad-kumkar/eth-integration/issues"
+  },
+  "homepage": "https://github.com/prasad-kumkar/eth-integration#readme"
 }

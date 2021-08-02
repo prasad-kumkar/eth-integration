@@ -7,57 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
 
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
-  <script src='./fund.js'></script>
-  <script>
-    fund.connectMetamask();
+  <script src='./EthIntegrate.js'></script>
 
-    fund.getAccounts()
-    .then((res) => {
-      console.log(res)
+  <script type="text/javascript">
+    $(function(){
+        $.getJSON('Ballot.json',function(data){
+          console.log(data.abi)
+          let eth = new EthIntegrate.EthIntegrate(abi=data.abi);
+          eth.getAccounts().then(accounts => {
+            console.log(accounts)
+          })
+          let token = '0xc2118d4d90b274016cb7a54c03ef52e6c537d957'
+          eth.checkErc20Balance(token).then(balance => {
+            console.log(`Balance (${token}): , ${web3.utils.fromWei(balance)}`)
+          })
+
+          let contractAddress = '0x30CA3f5332E2121ba318A56d8B015EFf838edA43';
+          eth.transactContract(contractAddress, 'delegate', ['0xdc7579bdeeACd54fB9C1e1935E0bfaE6109cEd45'])
+          .then(resp => {
+            console.log(resp)
+          })
+          .catch( err => {
+            console.log(err)
+          })
+
+        }).error(function(){
+            console.log('error');
+        });
     });
+    </script>
 
-    fund.checkDaiBalance()
-    .then((res) => {
-      console.log(fund.fromWei(res))
-    })
-
-    // FUND_NAME, FUND_TOKEN_SYMBOL, [TOKENS]
-
-    // fund.createFund("Prasad's Fund", "PRASAD",  ['0xdc7579bdeeACd54fB9C1e1935E0bfaE6109cEd45'])
-    // .then((res) => {
-    //   console.log(res)
-    // })
+  <script>
     
-    // AMOUNT, FUND_ADDRESS, REFERRAL
-    // fund.deposit(1, '0x8B864bc715d4B712A14eeA3ab898cfCA528B8c5B')
-    // .then(res => {
-    //   console.log(res)
-    // })
 
-    // AMOUNT, FUND_ADDRESS
-    // fund.withdraw(1, '0x8B864bc715d4B712A14eeA3ab898cfCA528B8c5B')
+
+
+    // fund.callFunction('fundMapping', ['0x8B864bc715d4B712A14eeA3ab898cfCA528B8c5B'])
     // .then((res) => {
     //   console.log(res)
     // })
 
-    fund.callFunction('fundMapping', ['0x8B864bc715d4B712A14eeA3ab898cfCA528B8c5B'])
-    .then((res) => {
-      console.log(res)
-    })
+    // fund.callFunction('getPendingDepositRequests')
+    // .then((res) => {
+    //   console.log(res)
+    // })
 
-    fund.callFunction('getPendingDepositRequests')
-    .then((res) => {
-      console.log(res)
-    })
-
-    fund.callFunction('getPendingWithdrawRequests')
-    .then((res) => {
-      console.log(res)
-    })
+    // fund.callFunction('getPendingWithdrawRequests')
+    // .then((res) => {
+    //   console.log(res)
+    // })
 
 
   </script>
