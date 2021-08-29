@@ -30,7 +30,7 @@ eth.queryContract(CONTRACT_ADDRESS, QUERY_METHOD_NAME, [ ARGUMENTS ])
 ```
 ### Call Contract Methods (transact)
 ```
-eth.queryContract(CONTRACT_ADDRESS, TRANSACT_METHOD_NAME, [ ARGUMENTS ])
+eth.transactContract(CONTRACT_ADDRESS, TRANSACT_METHOD_NAME, [ ARGUMENTS ])
 .then(resp => {
     console.log(resp)
 })
